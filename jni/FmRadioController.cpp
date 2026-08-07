@@ -958,6 +958,10 @@ int FmRadioController :: SetBand
                 ret = FmIoctlsInterface::set_band(fd_driver,
                                76000, 90000);
                 break;
+           case BAND_30000_999000:
+                ret = FmIoctlsInterface::set_band(fd_driver,
+                               30000, 999000);
+                break;
             default:
                 ALOGE("Band type: %ld is invalid\n", band);
                 ret = FM_FAILURE;
