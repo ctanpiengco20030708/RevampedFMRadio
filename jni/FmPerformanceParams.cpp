@@ -55,6 +55,10 @@ signed char FmPerformanceParams :: SetBand
        ret = FmIoctlsInterface::set_band(fd,
                                76000, 90000);
        break;
+   case BAND_30000_999000:
+       ret = FmIoctlsInterface::set_band(fd,
+                               30000, 999000);
+       break;
    default:
        ALOGE("Band type: %u is invalid\n", band);
        ret = FM_FAILURE;
