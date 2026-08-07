@@ -1,9 +1,9 @@
 <p align="center">
     <img src="https://user-images.githubusercontent.com/28353279/203109894-5c5cb86c-a882-4c0d-baab-24ba9a417082.svg" width="30%" />
 </p>
-<h2 align="center"><a href="https://github.com/iusmac/RevampedFMRadio">RevampedFMRadio</a></h2>
+<h2 align="center"><a href="https://github.com/iusmac/RevampedFMRadio">RevampedFMRadio v2</a></h2>
 
-RevampedFMRadio app is a resurrection of the old but gold _AOSP FMRadio_ app actively developed for Android 5.0 (API level 21). On the internet, you may find different variations and implementations for QCOM and MTK SoCs. Here we're using latest source codebase from LineageOS 18.1 (Android 11).
+RevampedFMRadioV2 is a resurrected (but modified by CTanpiengco20030708) of the old but gold _AOSP FMRadio_ app actively developed for Android 5.0 (API level 21). On the internet, you may find different variations and implementations for QCOM and MTK SoCs. Here we're using latest source codebase from LineageOS 18.1 (Android 11).
 
 LineageOS dropped _AOSP FMRadio_ in favor of _FMApp2_ (_com.caf.fmradio_) starting from LineageOS 19.0 (Android 12) release. Despite _FMApp2_ has a "freshy" codebase and API level 31 support, it doesn't work well in general (randomly stops & freezes) and provides a poor overall UI/UX.
 
@@ -83,17 +83,10 @@ AOSP FMRadio | RevampedFMRadio
 
 ## Installation
 1. Clone the branch that corresponds to your device SoC, for example:
-    - Use as an <em>in-tree</em> package within the device tree (<em>Recommended</em>):
+    - Use as an <em>in-tree</em> package within the device tree:
         ```Console
-        git clone --depth=1 -b qcom https://github.com/iusmac/RevampedFMRadio.git
+        git clone --depth=1 -b qcom https://github.com/ctanpiengco2003/RevampedFMRadio.git
         ```
-    - Use as a project via [Local Manifests](https://gerrit.googlesource.com/git-repo/+/master/docs/manifest-format.md#Local-Manifests) (<em>Not recommended</em>):
-        ```xml
-        <remote name="iusmac" fetch="https://github.com/iusmac" revision="qcom" />
-        <project path="packages/apps/RevampedFMRadio" name="RevampedFMRadio" remote="iusmac" />
-        ```
-        **NOTE:** there's a high chance of getting something broken if you always fetch upstream changes. It's recommended to go with <em>in-tree</em> package within your device tree, and from time to time manually merge and check upstream changes.
-
 2. Add app to `device.mk`:
 ```Makefile
 PRODUCT_PACKAGES += \
